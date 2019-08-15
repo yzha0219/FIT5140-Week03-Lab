@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		463372D02305177E00FAE377 /* CurrentPartyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 463372CF2305177E00FAE377 /* CurrentPartyTableViewController.swift */; };
 		46794329230515C2002C6F4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46794328230515C2002C6F4D /* AppDelegate.swift */; };
-		4679432B230515C2002C6F4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4679432A230515C2002C6F4D /* ViewController.swift */; };
 		4679432E230515C2002C6F4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4679432C230515C2002C6F4D /* Main.storyboard */; };
 		46794331230515C2002C6F4D /* FIT5140_Week03_Lab.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4679432F230515C2002C6F4D /* FIT5140_Week03_Lab.xcdatamodeld */; };
 		46794333230515C2002C6F4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46794332230515C2002C6F4D /* Assets.xcassets */; };
 		46794336230515C2002C6F4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46794334230515C2002C6F4D /* LaunchScreen.storyboard */; };
+		4679433E2305172F002C6F4D /* SuperHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4679433D2305172F002C6F4D /* SuperHero.swift */; };
+		46799FAA230518B0003DD1AA /* AllHeroesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799FA9230518B0003DD1AA /* AllHeroesTableViewController.swift */; };
+		46799FAC230518CB003DD1AA /* CreateSuperHeroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799FAB230518CB003DD1AA /* CreateSuperHeroViewController.swift */; };
+		46799FAE230518FD003DD1AA /* SuperHeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799FAD230518FD003DD1AA /* SuperHeroTableViewCell.swift */; };
+		46799FB02305191C003DD1AA /* AddSuperHeroDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46799FAF2305191C003DD1AA /* AddSuperHeroDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		463372CF2305177E00FAE377 /* CurrentPartyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPartyTableViewController.swift; sourceTree = "<group>"; };
 		46794325230515C2002C6F4D /* FIT5140-Week03-Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FIT5140-Week03-Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46794328230515C2002C6F4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4679432A230515C2002C6F4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4679432D230515C2002C6F4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46794330230515C2002C6F4D /* FIT5140_Week03_Lab.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FIT5140_Week03_Lab.xcdatamodel; sourceTree = "<group>"; };
 		46794332230515C2002C6F4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46794335230515C2002C6F4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		46794337230515C2002C6F4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4679433D2305172F002C6F4D /* SuperHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHero.swift; sourceTree = "<group>"; };
+		46799FA9230518B0003DD1AA /* AllHeroesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllHeroesTableViewController.swift; sourceTree = "<group>"; };
+		46799FAB230518CB003DD1AA /* CreateSuperHeroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateSuperHeroViewController.swift; sourceTree = "<group>"; };
+		46799FAD230518FD003DD1AA /* SuperHeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperHeroTableViewCell.swift; sourceTree = "<group>"; };
+		46799FAF2305191C003DD1AA /* AddSuperHeroDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSuperHeroDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +66,18 @@
 		46794327230515C2002C6F4D /* FIT5140-Week03-Lab */ = {
 			isa = PBXGroup;
 			children = (
+				46799FAB230518CB003DD1AA /* CreateSuperHeroViewController.swift */,
 				46794328230515C2002C6F4D /* AppDelegate.swift */,
-				4679432A230515C2002C6F4D /* ViewController.swift */,
 				4679432C230515C2002C6F4D /* Main.storyboard */,
 				46794332230515C2002C6F4D /* Assets.xcassets */,
 				46794334230515C2002C6F4D /* LaunchScreen.storyboard */,
 				46794337230515C2002C6F4D /* Info.plist */,
 				4679432F230515C2002C6F4D /* FIT5140_Week03_Lab.xcdatamodeld */,
+				4679433D2305172F002C6F4D /* SuperHero.swift */,
+				463372CF2305177E00FAE377 /* CurrentPartyTableViewController.swift */,
+				46799FA9230518B0003DD1AA /* AllHeroesTableViewController.swift */,
+				46799FAD230518FD003DD1AA /* SuperHeroTableViewCell.swift */,
+				46799FAF2305191C003DD1AA /* AddSuperHeroDelegate.swift */,
 			);
 			path = "FIT5140-Week03-Lab";
 			sourceTree = "<group>";
@@ -138,9 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4679432B230515C2002C6F4D /* ViewController.swift in Sources */,
 				46794331230515C2002C6F4D /* FIT5140_Week03_Lab.xcdatamodeld in Sources */,
 				46794329230515C2002C6F4D /* AppDelegate.swift in Sources */,
+				463372D02305177E00FAE377 /* CurrentPartyTableViewController.swift in Sources */,
+				46799FAA230518B0003DD1AA /* AllHeroesTableViewController.swift in Sources */,
+				46799FAC230518CB003DD1AA /* CreateSuperHeroViewController.swift in Sources */,
+				4679433E2305172F002C6F4D /* SuperHero.swift in Sources */,
+				46799FB02305191C003DD1AA /* AddSuperHeroDelegate.swift in Sources */,
+				46799FAE230518FD003DD1AA /* SuperHeroTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
