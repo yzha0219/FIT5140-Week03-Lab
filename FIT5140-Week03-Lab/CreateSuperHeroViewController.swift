@@ -10,13 +10,18 @@ import UIKit
 
 class CreateSuperHeroViewController: UIViewController {
 
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var abilitiesTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func createHero(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
