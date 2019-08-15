@@ -8,11 +8,30 @@
 
 import UIKit
 
-class AllHeroesTableViewController: UITableViewController {
-
+class AllHeroesTableViewController: UITableViewController, UISearchResultsUpdating, AddSuperHeroDelegate {
+    
+    let SECTION_HEROS = 0
+    let SECTION_COUNT = 1
+    let CELL_HERO = "heroCell"
+    let CELL_COUNT = "totalHerosCell"
+    
+    var allHeros: [SuperHero] = []
+    var filteredHeros: [SuperHero] = []
+    weak var superHeroDelegate: AddSuperHeroDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        createDefaultCharacters()
+        
+        filteredHeros = allHeros
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Heroes"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,23 +43,52 @@ class AllHeroesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        if section == SECTION_HEROS {
+            return filteredHeros.count
+        } else {
+            return 1
+        }
     }
 
-    /*
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text?.lowercased(), searchText.count > 0 {
+            filteredHeros = allHeros.filter({(hero: SuperHero) -> Bool in return hero.name.lowercased().contains(searchText)})
+        }
+        else {
+            filteredHeros = allHeros
+        }
+        
+        tableView.reloadData()
+    }
+    
+    func addSuperHero(newHero: SuperHero) -> Bool {
+        <#code#>
+    }
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+        if indexPath.section == SECTION_HEROS {
+            let heroCell = tableView.dequeueReusableCell(withIdentifier: CELL_HERO, for: indexPath) as! SuperHeroTableViewCell
+            let hero = filteredHeros[indexPath.row]
+            
+            heroCell.nameLabel.text = hero.name
+            heroCell.abilitiesLabel.text = hero.abilities
+            
+            return heroCell
+        }
+        
+        let countCell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
+        countCell.textLabel?.text = "\(allHeros.count) Heros in database"
+        countCell.selectionStyle = .none
+        return countCell
+        
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -86,5 +134,20 @@ class AllHeroesTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == SECTION_HEROS {
+            tableView.deselectRow(at: indexPath, animated: false)
+            return
+        }
+        
+        if superHeroDelegate!.addSuperHero(newHero: filteredHeros[indexPath.row]) {
+            navigationController?.popViewController(animated: true)
+            return
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+    }
 }
+
