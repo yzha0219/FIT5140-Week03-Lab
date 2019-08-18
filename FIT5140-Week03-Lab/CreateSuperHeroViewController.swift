@@ -9,6 +9,8 @@
 import UIKit
 
 class CreateSuperHeroViewController: UIViewController {
+    
+    weak var superHeroDelegate: AddSuperHeroDelegate?
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var abilitiesTextField: UITextField!
@@ -20,6 +22,32 @@ class CreateSuperHeroViewController: UIViewController {
     }
     
     @IBAction func createHero(_ sender: Any) {
+        if nameTextField.text != "" && abilitiesTextField.text != ""{
+            let name = nameTextField.text!
+            let abilities = abilitiesTextField.text!
+            let hero = SuperHero(name: name, abilities: abilities)
+            let _ = superHeroDelegate!.addSuperHero(newHero: hero)
+            navigationController?.popViewController(animated: true)
+            return
+        }
+        
+        var errorMsg = "Please ensure all fields are filled:\n"
+        
+        if nameTextField.text == ""{
+            errorMsg += " - Must provide a name\n"
+        }
+        if abilitiesTextField.text == ""{
+            errorMsg += " - Must provide abilities"
+        }
+        
+        
+    }
+    
+    
+    func displayMessage(title: String,message: String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alertController,animated: true, completion: nil)
     }
     
     /*

@@ -54,7 +54,7 @@ class CurrentPartyTableViewController: UITableViewController, AddSuperHeroDelega
         }
         
         let countCell = tableView.dequeueReusableCell(withIdentifier: CELL_COUNT, for: indexPath)
-        countCell.textLabel?.text = "\(currentParty.count)/6 Heros in party"
+        countCell.textLabel?.text = "\(currentParty.count)/6 Heroes in party"
         return countCell
     }
     
@@ -98,22 +98,19 @@ class CurrentPartyTableViewController: UITableViewController, AddSuperHeroDelega
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    */
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "allHerosSegue" {
+        if segue.identifier == "allHeroesSegue" {
             let destination = segue.destination as! AllHeroesTableViewController
             destination.superHeroDelegate = self
         }
     }
+    
     
     func addSuperHero(newHero: SuperHero) -> Bool {
         if currentParty.count >= 6 {
@@ -125,7 +122,7 @@ class CurrentPartyTableViewController: UITableViewController, AddSuperHeroDelega
         tableView.insertRows(at: [IndexPath(row: currentParty.count - 1, section: SECTION_PARTY)], with: .automatic)
         tableView.endUpdates()
         tableView.reloadSections([SECTION_COUNT], with: .automatic)
-        return false
+        return true
     }
 
 }
